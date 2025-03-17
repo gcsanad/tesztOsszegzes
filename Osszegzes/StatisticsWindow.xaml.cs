@@ -200,7 +200,7 @@ namespace Osszegzes
                 // Create charts (only if data exists)
                 if (megerthetosegStats.Any())
                 {
-                    CreatePieChart(megerthetosegChart, megerthetosegStats, "Megérthetőség");
+                    CreatePieChart(megerthetosegChart, megerthetosegStats, "Nehézségek");
                     
                 }
 

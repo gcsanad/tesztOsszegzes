@@ -64,7 +64,7 @@
 
                         <GroupBox Header="Tanítási stílus értékelése" Margin="0,0,0,15">
                             <StackPanel>
-                                <Label Content="Megérthetőség:"/>
+                                <Label Content="Nehézség:"/>
                                 <ComboBox x:Name="cmbMegerthetoseg">
                                     <ComboBoxItem Content="Egyszerű" />
                                     <ComboBoxItem Content="Inkább egyszerű" />
@@ -72,7 +72,7 @@
                                     <ComboBoxItem Content="Nehezen megérthető" />
                                 </ComboBox>
 
-                                <Label Content="Érthetőség:"/>
+                                <Label Content="Magyarázat érthetősége:"/>
                                 <ComboBox x:Name="cmbErtetoseg">
                                     <ComboBoxItem Content="Rendszerezett, jól érthető" />
                                     <ComboBoxItem Content="Érthető" />

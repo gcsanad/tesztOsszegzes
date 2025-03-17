@@ -45,7 +45,7 @@
                 <DataGridTextColumn Header="ID" Binding="{Binding id}" Width="50"/>
                 <DataGridTextColumn Header="Tanár" Binding="{Binding tanar}" Width="120"/>
                 <DataGridTextColumn Header="Osztály" Binding="{Binding osztaly}" Width="80"/>
-                <DataGridTextColumn Header="Nehézség" Binding="{Binding nehezseg}" Width="120"/>
+                <DataGridTextColumn Header="Nehézség" Binding="{Binding megerthetoseg}" Width="120"/>
                 <DataGridTextColumn Header="Magyarázat érthetősége" Binding="{Binding erthetoseg}" Width="120"/>
                 <DataGridTextColumn Header="Táblai munka" Binding="{Binding tablaiMunka}" Width="80"/>
                 <DataGridTextColumn Header="Vetített diasor" Binding="{Binding vetitettDiasor}" Width="90"/>
