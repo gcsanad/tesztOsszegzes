@@ -1,0 +1,72 @@
+﻿<Page x:Class="Osszegzes.Eredmenyek"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Osszegzes"
+      mc:Ignorable="d" 
+      d:DesignHeight="700" d:DesignWidth="1200"
+      Title="Eredmenyek">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Margin="10">
+            <TextBlock Text="Teszt Összegzés Eredmények" FontSize="24" FontWeight="Bold" Margin="0,0,0,15"/>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0" Margin="0,0,5,0">
+                    <Label Content="Szűrés tanár szerint:"/>
+                    <ComboBox x:Name="cmbFilterTeacher" SelectionChanged="Filter_Changed" Margin="0,0,0,10"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" Margin="5,0,0,0">
+                    <Label Content="Szűrés osztály szerint:"/>
+                    <ComboBox x:Name="cmbFilterClass" SelectionChanged="Filter_Changed" Margin="0,0,0,10"/>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+
+        <DataGrid x:Name="dgResults" Grid.Row="1" Margin="10" 
+                  AutoGenerateColumns="False" 
+                  IsReadOnly="True"
+                  AlternatingRowBackground="AliceBlue"
+                  CanUserSortColumns="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding id}" Width="50"/>
+                <DataGridTextColumn Header="Tanár" Binding="{Binding tanar}" Width="120"/>
+                <DataGridTextColumn Header="Osztály" Binding="{Binding osztaly}" Width="80"/>
+                <DataGridTextColumn Header="Nehézség" Binding="{Binding nehezseg}" Width="120"/>
+                <DataGridTextColumn Header="Magyarázat érthetősége" Binding="{Binding erthetoseg}" Width="120"/>
+                <DataGridTextColumn Header="Táblai munka" Binding="{Binding tablaiMunka}" Width="80"/>
+                <DataGridTextColumn Header="Vetített diasor" Binding="{Binding vetitettDiasor}" Width="90"/>
+                <DataGridTextColumn Header="Oktatófilmek" Binding="{Binding oktatofilmek}" Width="80"/>
+                <DataGridTextColumn Header="Egyéni gyak" Binding="{Binding egyeniGyak}" Width="80"/>
+                <DataGridTextColumn Header="Házi feladatok" Binding="{Binding haziFeladatok}" Width="80"/>
+                <DataGridTextColumn Header="Időráfordítás" Binding="{Binding ido}" Width="120"/>
+                <DataGridTextColumn Header="Gyakoriság" Binding="{Binding gyakorisag}" Width="100"/>
+                <DataGridTextColumn Header="Érzés" Binding="{Binding erzes}" Width="120"/>
+                <DataGridTextColumn Header="Élmény" Binding="{Binding elmeny}" Width="120"/>
+                <DataGridTextColumn Header="Megjegyzés" Binding="{Binding megjegyzes}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="10">
+            <Button x:Name="btnBack" Content="Vissza a főoldalra" Click="BtnBack_Click" 
+                    Background="LightBlue" Padding="10,5" Margin="0,0,10,0"/>
+            <Button x:Name="btnRefresh" Content="Frissítés" Click="BtnRefresh_Click" 
+                    Background="LightGreen" Padding="10,5"/>
+            <Button x:Name="btnStatistics" Content="Statisztikák" Click="BtnStatistics_Click" 
+                    Background="LightYellow" Padding="10,5" Margin="10,0,0,0"/>
+        </StackPanel>
+    </Grid>
+</Page>
